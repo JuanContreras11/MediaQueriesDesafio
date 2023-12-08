@@ -1,0 +1,283 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: #e7e7e7;
+}
+
+/*Estilos del contenedor principal*/
+.container {
+
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "filtro filtro"
+    "side grid"
+    "foot foot";
+  grid-template-columns: 10% 90%;
+  height: 100vh;
+}
+
+/* Estilos del menú de navegación */
+.nav {
+  grid-area: nav;
+  background-color: #25527b;
+  color: white;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px;
+  font-size: 24px;
+}
+
+#iconLogo{
+  display: flex;
+  align-items:center ;
+  gap: 5px;
+}
+
+.nav-logo {
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+/*Estilos de los filtros*/
+
+/* Estilos de la barra lateral */
+.side {
+  grid-area: side;
+  background-color: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  border-right: 4px double #25527b;
+  display: none;
+}
+
+.side-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.side-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+}
+
+.side-item {
+  text-decoration: none;
+  color: black;
+}
+
+.gris {
+  color: #7b7573;
+}
+
+/* Estilos de la grilla de productos */
+.grid {
+  justify-items: center;
+  justify-content: center;
+  background-color: #e7e7e7;
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 30rem), max-content)
+  ); /*autofit hace que sea responsive, llena las columnas para que ocupe todo el espacio posible*/
+  grid-auto-rows: min-content;
+  gap: 1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+
+/* Estilos de las tarjetas de productos */
+.card {
+  display: flex;
+  gap: 10px;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  box-shadow: 6px 7px 22px 1px rgba(0, 0, 0, 0.44);
+  width: 80%;
+  border-radius:  10px 52px 10px 52px;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-button {
+  width: 60%;
+  height: 30px;
+  background-color: #25527b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom:5px;
+  border-radius: 52px 10px 52px 10px;
+}
+
+/* Estilos del pie de página */
+.foot {
+  grid-area: foot;
+  background-color: #25527b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: auto;
+}
+
+/*********************************/
+
+/*Estilos del contenedor principal
+.container {
+
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "side grid"
+    "foot foot";
+  grid-template-columns: 10% 90%;
+  grid-template-rows:
+    5%
+    90%
+    5%;
+  height: 100vh;
+}
+
+/* Estilos del menú de navegación 
+.nav {
+  grid-area: nav;
+  background-color: #25527b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo {
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+/* Estilos de la barra lateral 
+.side {
+  grid-area: side;
+  background-color: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  border-right: 4px double #25527b;
+  display: none;
+}
+
+.side-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.side-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+}
+
+.side-item {
+  text-decoration: none;
+  color: black;
+}
+
+.gris {
+  color: #7b7573;
+}
+
+/* Estilos de la grilla de productos 
+.grid {
+  justify-items: center;
+  justify-content: center;
+  background-color: #e7e7e7;
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 30rem), max-content)
+  ); /*autofit hace que sea responsive, llena las columnas para que ocupe todo el espacio posible
+  grid-auto-rows: min-content;
+  gap: 1rem;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+/* Estilos de las tarjetas de productos 
+.card {
+  display: flex;
+  gap: 10px;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  box-shadow: 6px 7px 22px 1px rgba(0, 0, 0, 0.44);
+  width: 80%;
+  border-radius:  10px 52px 10px 52px;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-button {
+  width: 60%;
+  height: 30px;
+  background-color: #25527b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom:5px;
+  border-radius: 52px 10px 52px 10px;
+}
+
+/* Estilos del pie de página //
+.foot {
+  grid-area: foot;
+  background-color: #25527b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+*/
+
+
+
