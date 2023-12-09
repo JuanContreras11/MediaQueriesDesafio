@@ -51,12 +51,12 @@ body {
 
 .filtro {
   grid-area: filtro;
-  background-color: e2e2e2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 2%;
+  border-bottom: 1px solid black;
 }
 
 .select {
@@ -128,7 +128,7 @@ body {
   grid-auto-rows: min-content;
   gap: 10rem;
   margin-top: 10px;
-  margin-bottom: 20%;
+  margin-bottom: 50px;
 }
 
 /* Estilos de las tarjetas de productos */
@@ -176,8 +176,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 50px;
+  margin-bottom: 20px;
   gap: 1rem;
 }
 .numeros p {
@@ -212,7 +212,7 @@ body {
   padding: 10px;
   margin-top: auto;
 }
-
+/*******************************************/
 @media (min-width: 576px) {
   /* Estilos generales */
   * {
@@ -229,51 +229,67 @@ body {
   .container {
     display: grid;
     grid-template-areas:
-      "nav nav"
-      "filtro filtro"
-      "grid grid"
-      "numeros numeros"
+      "nav filtro"
+      "side grid"
+      "side numeros"
       "foot foot";
+    grid-template-columns: 11% 89%;
     height: 100vh;
   }
 
   /* Estilos del menú de navegación */
+  .nav {
+    grid-area: nav;
+    background-color: #25527b;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 25px;
+  }
 
+  #iconLogo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-logo {
+    font-weight: lighter;
+    font-size: 25px;
+  }
+  #hamb {
+    display: none;
+  }
 
   /* Estilos de la barra lateral */
   .side {
     grid-area: side;
-    background-color: #e7e7e7;
+    background-color: #25527b;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    border-right: 4px double #25527b;
-    display: none;
-  }
-
-  .side-title {
-    font-weight: bold;
-    font-size: 18px;
+    justify-items: center;
+    align-items: center;  
+    color: #ffffff;
+    justify-content: space-between;
+    height: 100%;
   }
 
   .side-list {
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: 10px;
+    gap: 20px;
+    
   }
 
   .side-item {
     text-decoration: none;
     color: black;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight:100;
   }
-
-  .gris {
-    color: #7b7573;
-  }
-
- 
 
   /* Estilos de las tarjetas de productos */
   .card {
@@ -313,44 +329,44 @@ body {
   }
 
   /*Estilos numeros*/
-.numeros {
-  grid-area: numeros;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.numeros p {
-  display: flex;
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #000000;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px 10px 10px 10px;
-}
-.numeros i {
-  display: flex;
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #000000;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px 10px 10px 10px;
-}
-
-
+  .numeros {
+    grid-area: numeros;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .numeros p {
+    display: flex;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000000;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+  }
+  .numeros i {
+    display: flex;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000000;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+  }
 
   /* Estilos del pie de página /*/
   .foot {
     grid-area: foot;
-    background-color: #25527b;
+    background-color: #193753;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
+    width: 100%;
   }
+
 }
