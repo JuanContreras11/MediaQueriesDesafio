@@ -55,15 +55,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 2%;
+  align-items:center ;
+  margin-top: 2%;
 }
 
 .select {
   position: relative;
   display: inline-block;
   margin-bottom: 15px;
-  width: 100%;
+  width: 80%;
 }
 .select select {
   font-family: "Arial";
@@ -185,9 +185,20 @@ body {
   font-size: 20px;
   width: 30px;
   height: 30px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   justify-content: center;
   align-items: center;
+  border-radius: 10px 10px 10px 10px;
+}
+.numeros i {
+  display: flex;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000000;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
 }
 
 /* Estilos del pie de página */
